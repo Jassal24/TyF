@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Everything!!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fae1dd;
+            margin: 0;
+        }
+        
+        .container {
+            position: relative;
+        }
+        
+        .valentines {
+            position: relative;
+            top: 50px;
+            cursor: pointer;
+            animation: up 3s linear infinite;
+        }
+        
+        @keyframes up {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #f08080;
+        }
+        
+        .envelope:before {
+            background-color: #f08080;
+            content: "";
+            position: absolute;
+            width: 212px;
+            height: 212px;
+            transform: rotate(45deg);
+            top: -105px;
+            left: 44px;
+            border-radius: 30px 0 0 0;
+        }
+        
+        .card {
+            position: absolute;
+            background-color: #eae2b7;
+            width: 270px;
+            height: 170px;
+            top: 5px;
+            left: 15px;
+            box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+            z-index: 5;
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            border: 3px solid #003049;
+            border-style: dotted;
+            width: 240px;
+            height: 140px;
+            left: 12px;
+            top: 12px;
+        }
+        
+        .text {
+            position: absolute;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 28px;
+            text-align: center;
+            line-height: 25px;
+            top: 19px;
+            left: 85px;
+            color: #003049;
+        }
+        
+        .heart {
+            background-color: #d62828;
+            display: inline-block;
+            height: 30px;
+            margin: 0 10px;
+            position: relative;
+            top: 110px;
+            left: 105px;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: rgb(206, 48, 130);
+            border-radius: 50%;
+            height: 30px;
+            position: absolute;
+            width: 30px;
+        }
+        
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+        
+        .heart:after {
+            left: 15px;
+            top: 0;
+        }
+        
+        .hearts {
+            position: absolute;
+        }
+        
+        .one,
+        .two,
+        .three,
+        .four,
+        .five {
+            background-color: rgb(206, 48, 130);
+            display: inline-block;
+            height: 10px;
+            margin: 0 10px;
+            position: relative;
+            transform: rotate(-45deg);
+            width: 10px;
+            top: 50px;
+        }
+        
+        .one:before,
+        .one:after,
+        .two:before,
+        .two:after,
+        .three:before,
+        .three:after,
+        .four:before,
+        .four:after,
+        .five:before,
+        .five:after {
+            content: "";
+            background-color: rgb(206, 48, 130);
+            border-radius: 50%;
+            height: 10px;
+            position: absolute;
+            width: 10px;
+        }
+        
+        .one:before,
+        .two:before,
+        .three:before,
+        .four:before,
+        .five:before {
+            top: -5px;
+            left: 0;
+        }
+        
+        .one:after,
+        .two:after,
+        .three:after,
+        .four:after,
+        .five:after {
+            left: 5px;
+            top: 0;
+        }
+        
+        .one {
+            left: 10px;
+            animation: heart 1s ease-out infinite;
+        }
+        
+        .two {
+            left: 30px;
+            animation: heart 2s ease-out infinite;
+        }
+        
+        .three {
+            left: 50px;
+            animation: heart 1.5s ease-out infinite;
+        }
+        
+        .four {
+            left: 70px;
+            animation: heart 2.3s ease-out infinite;
+        }
+        
+        .five {
+            left: 90px;
+            animation: heart 1.7s ease-out infinite;
+        }
+        
+        @keyframes heart {
+            0% {
+                transform: translateY(0) rotate(-45deg) scale(0.3);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150px) rotate(-45deg) scale(1.3);
+                opacity: 0.5;
+            }
+        }
+        
+        .front {
+            position: absolute;
+            border-right: 180px solid #f4978e;
+            border-top: 95px solid transparent;
+            border-bottom: 100px solid transparent;
+            left: 120px;
+            top: 5px;
+            width: 0;
+            height: 0;
+            z-index: 10;
+        }
+        
+        .front:before {
+            position: absolute;
+            content: "";
+            border-left: 300px solid #f8ad9d;
+            border-top: 195px solid transparent;
+            left: -120px;
+            top: -95px;
+            width: 0;
+            height: 0;
+        }
+        
+        .shadow {
+            position: absolute;
+            width: 330px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            top: 265px;
+            left: -15px;
+            animation: scale 3s linear infinite;
+        }
+        
+        @keyframes scale {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+        }
+        
+        .cat {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-image: url('./catss-removebg-preview.png');
+            background-size: cover;
+            animation: move 5s linear infinite;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quote {
+            font-family: Arial, sans-serif;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(500px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card">
+                <div class="text">Thank<br>You, for<br>Everything!</div>
+                <div class="heart"></div>
+            </div>
+            <div class="hearts">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+        </div>
+        <div class="shadow"></div>
+        <div class="cat">
+            <div class="quote" onclick="showMessage()">Click Me!</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.container').mouseenter(function() {
+                $('.card').stop().animate({
+                    top: '-90px'
+                }, 'slow');
+            }).mouseleave(function() {
+                $('.card').stop().animate({
+                    top: 0
+                }, 'slow');
+            });
+        });
+
+        function showMessage() {
+            alert('Hey,I just wanna say na Thank you for the love,care and being a lovely girl. Im so proud of you no matter what po and Sorry kasi d na kita kinausap kasi ayaw ko rin sa reason mo na sasabihin mo na gumagawa ka ng group act. nyo dahil lang sa asar is gusto mo ng break and ayun binigay ko para hindi ka na mahirapan and d ka na rin ma stress sa akin at sa tungkol sa ex mo isang beses lang ako nag banggit badtrip ka na and compare mo sa akin na almost a month na iniinis mo ako pero d ako nagsabi na nababadtrip  ako and sasabihin na may inaaral ako or gumagawa ako ng code dahil lang sa ex na yan na curious ka pa talaga kung bat ganun na sya hmmm. Its okay even if u stalk him naman i can see naman na iniistalk mo paminsansan sorry for interferring about ur privacy about the data that ive encrypt hmmm uhmm ayun lang naman and last i hope na maging peaceful na ang life me without me and youll achieve ur dreams po. I understand din naman sa ugali ko and it will affect ur studies and ur future if ako yung bf mo. I understand din naman na ayaw mong ma late sa pagpasa sa act mo and groupings yon and sorry for bringing up sa ex mo so immature for me for that no worries, i know ull excell without me and achieve whatever ur dream is andito lang ako sa gidli supporting u no matter and being strangers again ahh nga pala yung soo much pretty sa note ko ikaw lang yon no worries nag scroll lang kasi ako sa gallery ko and ikaw yung nakita.I know madaming worth it jan na lalaki and will treat u better the way i treat u pasensya na ive treated u sa bad for 6 months nakita mo na lahat ng worst ko sa buhay and i know naman na ayaw mo ng ganun in the future :). Sabi mo nga swerte na sana ako Yeah swerte na sana ako sayo pero malas mo saken hehe sorry. You take care of yourself po as always and be safe Iloveyouu. ');
+        }
+    </script>
+</body>
+
+</html>
